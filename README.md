@@ -18,9 +18,7 @@
 
 #### Thứ tự thực thi Logical Execution Order
 
-$$\text{FROM} \longrightarrow \text{JOIN} \longrightarrow \text{WHERE} \longrightarrow \text{GROUP BY} \longrightarrow \text{HAVING} 
-
-\longrightarrow \text{SELECT} \longrightarrow \text{DISTINCT} \longrightarrow \text{ORDER BY} \longrightarrow \text{LIMIT}$$
+FROM ➔ JOIN ➔ WHERE ➔ GROUP BY ➔ HAVING ➔ SELECT ➔ DISTINCT ➔ ORDER BY ➔ LIMIT
 
 | Bước | Mệnh đề (Clause) | Bản chất hoạt động & Lưu ý kỹ thuật |
 | :--- | :--- | :--- |
@@ -49,7 +47,7 @@ $$\text{FROM} \longrightarrow \text{JOIN} \longrightarrow \text{WHERE} \longrigh
     WHERE CONCAT(first_name, ' ', last_name) = 'Frank Harris'
 
     - Sử dụng CTE: 
-    
+
         WITH customer_fullname AS (
             SELECT CONCAT(first_name, ' ', last_name) AS full_name
             FROM Customer
