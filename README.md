@@ -10,15 +10,16 @@
 
 ### Đã làm:
     
-- Setup Docker + Postgres 16, import dataset Chinook, , sanity check 3 bảng chính (customer, invoice, track) — số dòng khớp, import thành công.
-    
-- Thử WHERE dùng alias từ SELECT → lỗi column does not exist. Nguyên nhân: WHERE chạy trước SELECT trong thứ tự thực thi.
+- Setup Docker + Postgres 16, import dataset Chinook, sanity check 3 bảng chính (`customer`, `invoice`, `track`) — số dòng khớp, import thành công.
+- Thử `WHERE` dùng alias từ `SELECT` → lỗi `column does not exist`. Xác nhận nguyên nhân: `WHERE` chạy trước `SELECT` trong thứ tự thực thi logic.
 
 ### Kiến thức chính
 
 #### Thứ tự thực thi Logical Execution Order
 
-FROM ➔ JOIN ➔ WHERE ➔ GROUP BY ➔ HAVING ➔ SELECT ➔ DISTINCT ➔ ORDER BY ➔ LIMIT
+```
+FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT
+```
 
 | Bước | Mệnh đề (Clause) | Bản chất hoạt động & Lưu ý kỹ thuật |
 | :--- | :--- | :--- |
