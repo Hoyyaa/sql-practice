@@ -1,21 +1,19 @@
-# sql-practice
+# Day 1: 12/8 Logical Query Processing Order
 
-## Day 1: 12/8 Logical Query Processing Order
-
-### Mục tiêu: 
+## Mục tiêu: 
 
 - Nắm vững **Logical Query Processing Order** (Thứ tự thực thi logic của truy vấn SQL) trong PostgreSQL.
 - Hiểu rõ bản chất vì sao câu lệnh SQL thực thi khác với thứ tự cú pháp người lập trình viết.
 - Thiết lập môi trường thực hành chuẩn với Docker và dataset mẫu Chinook
 
-### Đã làm:
+## Đã làm:
     
 - Setup Docker + Postgres 16, import dataset Chinook, sanity check 3 bảng chính (`customer`, `invoice`, `track`) — số dòng khớp, import thành công.
 - Thử `WHERE` dùng alias từ `SELECT` → lỗi `column does not exist`. Xác nhận nguyên nhân: `WHERE` chạy trước `SELECT` trong thứ tự thực thi logic.
 
-### Kiến thức chính
+## Kiến thức chính
 
-#### Thứ tự thực thi Logical Execution Order
+### Thứ tự thực thi Logical Execution Order
 
 ```
 FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT
@@ -31,7 +29,7 @@ FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDE
 
 
 
-### Lỗi gặp phải/ cách xử lý:
+## Lỗi gặp phải/ cách xử lý:
 
 - Lỗi column does not exist khi dùng alias trong WHERE → sửa bằng cách lặp lại biểu thức gốc thay vì alias, hoặc dùng CTE/subquery nếu cần tái sử dụng.
 
