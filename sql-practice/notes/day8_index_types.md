@@ -8,4 +8,4 @@
 
 ### Quan sát thực tế (orders_big, 10 triệu dòng)
 - `WHERE order_id = 12345` → Index Scan (nhờ PRIMARY KEY tự động có index)
-- `WHERE customer_id = 12345` → Seq Scan (chưa có index) — sẽ tối ưu ở Ngày 2
+- `WHERE customer_id = 12345` → Seq Scan (chưa có index)
